@@ -114,7 +114,15 @@ controlsBox.innerHTML = "";
 
 function endTurn() {
   playerTurn = !playerTurn
-  
+  if (koCheck(Player0  <= 0)) {
+    hideContols();
+    console.log(koCheck);
+  }
+if (koCheck(Player0 <= 20)) {
+  showControls();
+  console.log(koCheck);
+}
+}
 
 
 /*
