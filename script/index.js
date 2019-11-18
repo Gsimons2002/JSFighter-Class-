@@ -114,7 +114,7 @@ controlsBox.innerHTML = "";
 
 function endTurn() {
   playerTurn = !playerTurn
-}
+  
 
 
 /*
