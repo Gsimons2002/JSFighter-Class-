@@ -109,7 +109,11 @@ function showControls() {
 }
 
 function hideContols() {
-  
+controlsBox.innerHTML = "";
+}
+
+function endTurn() {
+  playerTurn = !playerTurn
 }
 
 
