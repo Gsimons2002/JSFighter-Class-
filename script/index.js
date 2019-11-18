@@ -108,6 +108,11 @@ function showControls() {
   }
 }
 
+function hideContols() {
+  
+}
+
+
 /*
 
 MHW = 'delicious'
