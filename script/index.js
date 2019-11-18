@@ -123,7 +123,6 @@ if (koCheck() {
   console.log(koCheck());
 }
 }
-}
 
 
 /*
