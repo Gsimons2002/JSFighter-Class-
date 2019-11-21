@@ -47,7 +47,7 @@ class Fighter {
     console.log(this.name + ' attacked ' + target.name + ' doing ' + damageDone + ' points of damage!');
     console.log(target.name + ' has ' + target.hp + ' hp points left!');
   }
-  single(target) {
+  single(target) { // attacks 1 time
     this.attack(target);
     //creating text for outputBox
       currentText = outputBox.innerHTML;
@@ -55,7 +55,7 @@ class Fighter {
       outputBox.innerHTML += "<br>";
       outputBox.innerHTML += currentText;
     endTurn();
-  }
+  } // make a attack two times
   double(target) {
     this.attack(target);
     this.attack(target);
@@ -64,7 +64,7 @@ class Fighter {
   recover() {
     console.log('Recovered!');
   }
-}
+} // Basically these are sam and crash
 function startup() {
   Player0 = new Fighter(P0NAME, P0CHARA);
   Player1 = new Fighter(P1NAME, P1CHARA);
@@ -156,6 +156,7 @@ function endTurn() {
     showControls();
   }
 }
+//This hides the showControls when a Character is defeated
 function hideControls() {
   controlsBox.innerHTML = "";
 }
