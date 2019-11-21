@@ -182,11 +182,8 @@ function endTurn() {
   if (kocheck(Player0, 0) || kocheck(Player1, 0)){
     hideControls();
   }
-  else {
-    showControls();
-  }
 }
-
+// this hides showControls when character is defeated
 function hideContols() {
   controlsBox.innerHTML = "";
 }
