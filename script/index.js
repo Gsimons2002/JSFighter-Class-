@@ -97,7 +97,7 @@ function showControls() {
 function koCheck(target, amount) {
   target.hp = target.hp - amount;
   if (target.hp <= 0) {
-    hideControls();
+    hideControls(); //
     return true;
   } else {
     return false;
@@ -140,7 +140,7 @@ function updateBars() {
     player1PercentSP = 100
   } else {
     player1PercentSP = player1PercentSP
-  }
+  } // makes the outPut Say that a player attacked and how much hp they took away
   barsBox.innerHTML = ''
   barsBox.innerHTML += 'P0<div class="hpBar"><div style="height:' + player0PercentHP + '%; width: 100%;" id="p0HPfill" class="HPfill"></div></div>'
   barsBox.innerHTML += '<div class="spBar"><div style="height:' + player0PercentSP + '%; width: 100%;" id="p0SPfill" class="SPfill"></div></div>'
