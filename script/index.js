@@ -3,7 +3,6 @@ const START_SP = 10;
 const DEFAULT_ATK = 5;
 const DEFAULT_DEF = 5;
 const DEFAULT_TEK = 5;
-
 //sets constants names
 const P0NAME = 'Crash';
 const P0CHARA = 'crashr';
@@ -12,7 +11,6 @@ const P1CHARA = 'saml';
 
 let playerTurn = false;
 let logging = true;
-
 let Player0;
 let Player1;
 
@@ -28,7 +26,6 @@ class Fighter {
   constructor(name, charaName) {
     //'contructor' is in all JS classes
     // It gets run immediately when a new object is created from a class
-
     // Set all of our default values for this new fighter here
     this.name = name;
     this.hp = START_HP;
@@ -38,7 +35,6 @@ class Fighter {
     this.tek = DEFAULT_TEK;
     this.charaName = charaName;
   }
-
   //this logs who attacked who
   attack(target) {
     console.log(this.name + ' attacked ' + target.name); //logs attack
@@ -54,8 +50,7 @@ class Fighter {
       koCheck(target, damage); //runs ko check
     }
   }
-
-  single(target) {
+  single(target) { // attacks 1 time
     this.attack(target);
     endTurn();
   }
@@ -65,7 +60,6 @@ class Fighter {
     this.attack(target);
     endTurn();
   }
-
   //this logs that they recovered
   recover() {
     console.log('Recovered!');
@@ -93,7 +87,6 @@ endTurn()
 function startup() {
   Player0 = new Fighter(P0NAME, P0CHARA);
   Player1 = new Fighter(P1NAME, P1CHARA);
-
   //this makes a shortcut for 'document.getElementById'
   gameBox = document.getElementById('gameBox');
   headerBox = document.getElementById('headerBox');
@@ -101,8 +94,6 @@ function startup() {
   barsBox = document.getElementById('barsBox');
   controlsBox = document.getElementById('controlsBox');
   outputBox = document.getElementById('outputBox');
-
-
   //this shows the fighter images in the graphics box
   graphicsBox.innerHTML = '<img id ="' + Player0.charaName + '" src="img/' + Player0.charaName + '_idle.png" alt="' + Player0.name + '" class="fighterIMG">';
   graphicsBox.innerHTML += '<img id ="' + Player1.charaName + '" src="img/' + Player1.charaName + '_idle.png" alt="' + Player1.name + '" class="fighterIMG">';
@@ -115,7 +106,6 @@ function startup() {
   showControls(); //runs the showControls() function
   updateBars(); //runs the updateBars() function
 }
-
 function showControls() {
   //checks to see which players turn it is and show the apropriate controls
   if (playerTurn) {
@@ -136,6 +126,7 @@ function showControls() {
 function koCheck(target, amount) {
   target.hp = target.hp - amount;
   if (target.hp <= 0) {
+    hideControls(); //
     return true;
   } else {
     return false;
@@ -161,7 +152,6 @@ function updateBars() {
   barsBox.innerHTML += updateBar(Player1, 'hp', Player1.hp, START_HP)
   barsBox.innerHTML += updateBar(Player1, 'sp', Player1.sp, START_SP)
 }
-
 // EndTurn code
 function endTurn() {
   playerTurn = !playerTurn
@@ -183,9 +173,6 @@ function hideControls() {
 
 
 /*
-
 MHW = 'delicious'
-
 MHWoutput > MHWinput
-
 */
