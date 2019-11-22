@@ -194,5 +194,5 @@ function hideControls() {
 
 /*
 MHW = 'delicious'
-MHWoutput > MHWinput
+MHWoutput > MHWinput 
 */
