@@ -1,4 +1,4 @@
-const START_HP = 20;
+const START_HP = 50;
 const START_SP = 10;
 const DEFAULT_ATK = 5;
 const DEFAULT_DEF = 5;
