@@ -1,8 +1,6 @@
 const START_HP = 100;
-const START_SP = 10;
 const DEFAULT_ATK = 10;
-const START_SP = 20;
-const DEFAULT_ATK = 5;
+const START_SP = 10;
 const DEFAULT_DEF = 5;
 const DEFAULT_TEK = 5;
 
@@ -95,7 +93,7 @@ class Fighter {
     console.log('Recovered!');
 
     //save old text
-    let oldtext = outputBox.innerHTML
+    let oldText = outputBox.innerHTML
 
     //if they have enough Sp
     if (this.sp >= SPLOSS) {
