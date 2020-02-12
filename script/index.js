@@ -1,9 +1,8 @@
 const START_HP = 100;
 const START_SP = 10;
 const DEFAULT_ATK = 10;
-const DEFAULT_DEF = 5;
-const DEFAULT_TEK = 5;
-
+const DEFAULT_DEF = 10;
+const DEFAULT_TEK = 10;
 //sets constants names
 const P0NAME = 'Crash';
 const P0CHARA = 'crashr';
@@ -42,7 +41,6 @@ class Fighter {
     this.tek = DEFAULT_TEK;
     this.charaName = charaName;
   }
-
   //this logs who attacked who
   attack(target) {
     let oldText = outputBox.innerHTML; //save old text
@@ -68,8 +66,7 @@ class Fighter {
       koCheck(target, damage); //runs ko check
     }
   }
-
-  single(target) {
+  single(target) { // attacks 1 time
     this.attack(target);
     endTurn();
   }
@@ -83,13 +80,12 @@ class Fighter {
       this.sp = this.sp - DOUBLE_SP_LOSS;
       this.attack(target);
       this.attack(target);
+      endTurn();
     }else {
-        outputBox.innerHTML = "not enough SP" + '<br><br>';
+        outputBox.innerHTML = this.name + " Does not have enough SP" + '<br><br>';
         outputBox.innerHTML += oldText;
     }
-    endTurn();
   }
-
   //this logs that they recovered
   recover() {
     console.log('Recovered!');
@@ -108,11 +104,11 @@ class Fighter {
       koCheck(this, -recovery);
       outputBox.innerHTML = this.name + ' Recovered ' + recovery + '<br><br>';
       outputBox.innerHTML += oldText;
+      endTurn();
     } else {
-      outputBox.innerHTML = "not enough SP" + '<br><br>';
+      outputBox.innerHTML = this.name + " Does not have enough SP" + '<br><br>';
       outputBox.innerHTML += oldText;
     }
-    endTurn();
   }
 }
 
@@ -139,7 +135,6 @@ function startup() {
   showControls(); //runs the showControls() function
   updateBars(); //runs the updateBars() function
 }
-
 function showControls() {
   //checks to see which players turn it is and show the apropriate controls
   if (playerTurn) {
@@ -187,7 +182,6 @@ function updateBars() {
   barsBox.innerHTML += updateBar(Player1, 'hp', Player1.hp, START_HP);
   barsBox.innerHTML += updateBar(Player1, 'sp', Player1.sp, START_SP);
 }
-
 // EndTurn code
 function endTurn() {
   playerTurn = !playerTurn;
