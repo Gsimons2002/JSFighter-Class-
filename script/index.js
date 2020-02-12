@@ -82,7 +82,7 @@ class Fighter {
       this.attack(target);
       endTurn();
     }else {
-        outputBox.innerHTML = this.name + "Does not have enough SP" + '<br><br>';
+        outputBox.innerHTML = this.name + " Does not have enough SP" + '<br><br>';
         outputBox.innerHTML += oldText;
     }
   }
@@ -104,11 +104,11 @@ class Fighter {
       koCheck(this, -recovery);
       outputBox.innerHTML = this.name + ' Recovered ' + recovery + '<br><br>';
       outputBox.innerHTML += oldText;
+      endTurn();
     } else {
-      outputBox.innerHTML = "not enough SP" + '<br><br>';
+      outputBox.innerHTML = this.name + " Does not have enough SP" + '<br><br>';
       outputBox.innerHTML += oldText;
     }
-    endTurn();
   }
 }
 
