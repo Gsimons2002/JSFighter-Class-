@@ -1,8 +1,8 @@
 const START_HP = 100;
 const START_SP = 20;
 const DEFAULT_ATK = 10;
-const DEFAULT_DEF = 5;
-const DEFAULT_TEK = 5;
+const DEFAULT_DEF = 10;
+const DEFAULT_TEK = 10;
 //sets constants names
 const P0NAME = 'Crash';
 const P0CHARA = 'crashr';
@@ -78,11 +78,11 @@ class Fighter {
       this.sp = this.sp - 5;
       this.attack(target);
       this.attack(target);
+      endTurn();
     }else {
-        outputBox.innerHTML = "not enough SP" + '<br><br>';
+        outputBox.innerHTML = this.name + "Does not have enough SP" + '<br><br>';
         outputBox.innerHTML += oldText;
     }
-    endTurn();
   }
   //this logs that they recovered
   recover() {
